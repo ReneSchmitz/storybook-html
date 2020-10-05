@@ -12,5 +12,6 @@ html {
 
 h1 {
   text-align: center;
-  padding-top: 9px;
+  margin: 0px;
+  padding-top: 4px;
 }
