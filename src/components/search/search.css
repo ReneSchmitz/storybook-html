@@ -1,21 +1,14 @@
-.btn {
-  border-radius: 20px;
-  color: white;
-  background-image: linear-gradient(180deg, #ed8770, #d9519d);
-  border: none;
-  padding: 10px 30px;
-}
-
-.flex-container {
+.searchInput {
+  border-radius: 19px;
+  background: #292e4b;
   display: flex;
-  flex-direction: row;
-  padding: 10px 35px 10px 35px;
+  justify-content: center;
+  padding: 10px 20px;
 }
 
-.btn > img {
-  width: 15px;
-}
-.btn > span {
-  margin-left: 10px;
-  font-size: 0.8rem;
+.searchInput input {
+  background-color: #292e4b;
+  border: none;
+  padding: 0px 25px;
+  opacity: 1;
 }
