@@ -1,0 +1,11 @@
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  box-shadow: -3px -10px 6px #000;
+}
+
+.bottom-nav div {
+  margin: 100px;
+}
