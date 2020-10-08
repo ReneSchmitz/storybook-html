@@ -1,0 +1,17 @@
+html {
+  font-size: 16px;
+  background-color: #383b49;
+  color: #d7d8db;
+}
+
+.bottom-nav {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+
+  box-shadow: -3px -10px 6px #000;
+}
+
+.bottom-nav div {
+  margin: 100px;
+}
