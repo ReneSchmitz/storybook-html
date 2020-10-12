@@ -1,23 +1,39 @@
+import "./track.css";
+import playActionSrc from "../../assets/play-action.svg";
+
 /*
-<div>
-<img src="--/micheal.png"/>
-<h3>Billie Jean<h3>
-<>Michael Jackson</>
+<div class="track">
+<img class="track_img" src="--/micheal.png"/>
+<h3 class="track__title">Billie Jean<h3>
+<p class="track__artist">Michael Jackson</p>
 <button><img src="../play.svg" />
 </button>
 </div>
 */
 
 export function createTrackElement() {
-  const divElement = document.createElement("div"); // create a div Element <div></div>
+  const title = "Thriller";
+  const artist = "Michael Jackson";
+
+  const trackElement = document.createElement("div"); // create a div Element <div></div>
   // divElement.innerText = "This is a track"; //<div> This is a track</div>
+  trackElement.className = "track";
 
-  const h3Element = document.createElement("h3"); // create h3 Elment
-  h3Element.innerText = "Billie Jean"; // <h3>Michael jackson</h3>
-  const pElement = document.createElement("p"); // create h3 Elment
-  pElement.innerText = "Michael Jackson"; // <h3>Michael jackson</h3>
+  const titleElement = document.createElement("h3"); // create h3 Elment
+  titleElement.innerText = title; // <h3>Billie Jean</h3>
+  const artistElement = document.createElement("p"); // create h3 Elment
+  artistElement.innerText = artist; // <h3>Michael jackson</h3>
+  const imgElement = document.createElement("img"); // create h3 Elment
+  imgElement.src =
+    "https://the-hollywood-gossip-res.cloudinary.com/iu/s--NeYhqfz---/t_full/cs_srgb,f_auto,fl_strip_profile.lossy,q_auto:420/v1364525135/vintage-michael-jackson.jpg";
+  imgElement.alt = "Image of" + artist;
+  // alternativ   imgElement.alt = 'Image of $(artist)';
+  imgElement.className = "track__image";
+  const buttonElement = document.createElement("button");
+  const playActionElement = document.createElement("img");
+  playActionElement.src = playActionSrc;
 
-  divElement.append(h3Element); //<div><h3>Michael Jackson</h3></div>
-  divElement.append(pElement); //<div><h3>Michael Jackson</h3></div>
-  return divElement;
+  trackElement.append(imgElement, titleElement, artistElement, buttonElement); //<div><h3>Michael Jackson</h3></div>
+  buttonElement.append(playActionElement);
+  return trackElement;
 }
