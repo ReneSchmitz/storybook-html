@@ -1,0 +1,16 @@
+.track {
+  display: flex;
+}
+
+.track__image {
+  height: 50px;
+  width: 50px;
+  border: 1px inset whitesmoke;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.button {
+  background-color: #383b49;
+  border: none;
+}
