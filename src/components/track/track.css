@@ -1,5 +1,6 @@
 .track {
   display: flex;
+  align-items: center;
 }
 
 .track__image {
@@ -11,6 +12,6 @@
 }
 
 .button {
-  background-color: #383b49;
+  background: none;
   border: none;
 }
