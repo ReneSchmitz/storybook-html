@@ -1,5 +1,6 @@
 import "./track.css";
 import playActionSrc from "../../assets/play-action.svg";
+import pauseActionSrc from "../../assets/pause-action.svg";
 
 /*
 <div class="track">
@@ -32,14 +33,91 @@ export function createTrackElement(track) {
   buttonElement.className = "button";
   const playActionElement = document.createElement("img");
   playActionElement.src = playActionSrc;
+  const pauseActionElement = document.createElement("img");
+  pauseActionElement.src = pauseActionSrc;
 
   trackElement.append(imgElement, titleElement, artistElement, buttonElement); //<div><h3>Michael Jackson</h3></div>
   buttonElement.append(playActionElement);
 
   const audioElement = new Audio(track.audioSrc);
+
+  let isPlaying = false;
+  /* alternative 1
   buttonElement.onclick = function () {
-    audioElement.play();
+    if (isPlaying) {
+      audioElement.pause();
+      playActionElement.src = playActionSrc;
+      playActionElement.alt = "Play Button";
+    } else {
+      audioElement.play();
+      playActionElement.src = pauseActionSrc;
+      playActionElement.alt = "Pause Button";
+    }
+    isPlaying = !isPlaying;
   };
+  */
+  /*alternative 2
+  let isPlaying = false;
+
+  const showPlayIcon = () =>{
+    playActionElement.src =playActionSrc;
+    playActionElement.alt = "Play Button";
+  };
+  const showPauseIcon = () =>{
+    playActionElement.src =pauseActionSrc;
+    playActionElement.alt = "Pause Button";
+  };
+
+
+  buttonElement.onclick = function () {
+    if (isPlaying) {
+      audioElement.pause();
+      setPlayIcon();
+    } else {
+      audioElement.play();
+      setPauseIcon();
+    }
+    isPlaying = !isPlaying;
+  };
+*/
+
+  buttonElement.onclick = () => {
+    if (isPlaying) {
+      audioElement.pause();
+      setPlayIcon(playActionElement);
+    } else {
+      audioElement.play();
+      setPauseIcon(playActionElement);
+    }
+    isPlaying = !isPlaying;
+  };
+
+  /* alternative
+  let isPlaying = false;
+
+  buttonElement.onclick = function () {
+    if (isPlaying) {
+      audioElement.pause();
+      isPlaying = false;
+      playActionElement.src = playActionSrc;
+      playActionElement.alt = "Play Button";
+    } else {
+      audioElement.play();
+      isPlaying = true;
+      playActionElement.src = pauseActionSrc;
+      playActionElement.alt = "Pause Button";
+    }
+  };
+*/
 
   return trackElement;
 }
+
+const setPlayIcon = (playActionElement) => {
+  playActionElement.src = playActionSrc;
+  playActionElement.alt = "Play Button";
+};
+const setPauseIcon = (playActionElement) => {
+  playActionElement.src = pauseActionSrc;
+  playActionElement.alt = "Pause Button";
+};
