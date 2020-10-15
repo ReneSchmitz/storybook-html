@@ -149,7 +149,7 @@ export const createTrackElement = (track) => {
       createElement("img", {
         className: "track__image",
         src: track.imgSrc,
-        alt: `Image of ${track.artist}`,
+        alt: "Image of ${track.artist}",
       }),
       createElement("div", {
         className: "track__description",
