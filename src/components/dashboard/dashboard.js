@@ -38,12 +38,12 @@ export const creatDashboardElement = (dashboard) => {
             alt: "repeat",
           }),
           createElement("img", {
-            src: dashboard.repeatImgSrc,
-            alt: "repeat",
+            src: dashboard.eqImgSrc,
+            alt: "equalizer",
           }),
           createElement("img", {
-            src: dashboard.repeatImgSrc,
-            alt: "repeat",
+            src: dashboard.favImgSrc,
+            alt: "favourites",
           }),
         ],
       }),
